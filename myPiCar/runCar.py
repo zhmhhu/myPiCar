@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# 电机控制
+# 小车跑起来
 #
 #
 
@@ -21,26 +21,12 @@ class stateCtrl(object):
 		self.IN2 = 12  # //电机接口2
 		self.IN3 = 13  # //电机接口3
 		self.IN4 = 15  # //电机接口4
-
-		########红外传感器接口定义#################
-		self.IR_LF = 16  # 左上
-		self.IR_LB = 18  # 左下
-		self.IR_RF = 32  # 右上
-		self.IR_RB = 22  # 右下
-
-		########超声波传感器接口定义#################
-		self.Trig = 38
-		self.Echo = 40
-
-		self.checkdiststate = False
-		self.diststart = False
-
-		#self.setup()
+		self.setup()
 
 	def setup(self):
 		'''引脚初始化'''
-		#GPIO.setmode(GPIO.BOARD)
-		#GPIO.setwarnings(False)
+		GPIO.setmode(GPIO.BOARD)
+		GPIO.setwarnings(False)
 
 		GPIO.setup(self.IN1, GPIO.OUT)
 		GPIO.setup(self.IN2, GPIO.OUT)
@@ -51,11 +37,7 @@ class stateCtrl(object):
 		GPIO.output(self.IN2, GPIO.LOW)
 		GPIO.output(self.IN3, GPIO.LOW)
 		GPIO.output(self.IN4, GPIO.LOW)
-		print('car start')
-
-		#GPIO.output(self.ENA, GPIO.HIGH)
-		#GPIO.output(self.ENB, GPIO.HIGH)
-		
+		print('car start')		
 
 	def t_up(self, secondvalue=0):
 		self.setup()

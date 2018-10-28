@@ -1,7 +1,10 @@
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#
 # 点亮LED灯
+#
+#
+
 import RPi.GPIO as GPIO
 import time
 

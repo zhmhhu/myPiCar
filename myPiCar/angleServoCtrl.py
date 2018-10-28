@@ -1,9 +1,10 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
-#  Angle Servo Control 
-#  Execute with parameter ==> sudo python3 servoCtrl.py <servo GPIO> <servo_angle> 
+#  摄像机云台控制模块
 #
-#  MJRoBot.org 01Feb18
+#
+
   
 from time import sleep
 import RPi.GPIO as GPIO

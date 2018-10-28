@@ -1,7 +1,10 @@
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# LED 等亮度及频率控制
+#
+# LED 灯亮度及频率控制
+#
+#
+
 import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)

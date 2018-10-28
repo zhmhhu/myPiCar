@@ -15,29 +15,40 @@
   </head>
   <body>
     <h1>MJRoBot Lab Live Streaming</h1>
+    <h3><img src="{{ url_for('video_feed') }}" height="65%"></h3>
 	<hr>
  <div>
     <table>
         <thead>
             <th>速度</th>
             <th colspan="3">方向</th>
+            <th colspan="3">云台</th>
         </thead>
         <tr>
                 <th><a href="/speed/acc"class="button">加速</a></th>
                 <th></th>
                 <th><a href="/ctrl/t_up"class="button">前进</a></th>
                 <th></th>
+                <th><a href="/camera/pan/-"class="button">向左</a> </th>
+                <th>[ {{ panServoAngle }} ]</th>
+                <th><a href="/camera/pan/+"class="button">向右</a> </th>
         </tr>
         <tr>
                 <th><a href="/speed/concel"class="button">复位</a></th>
                 <th><a href="/ctrl/t_left"class="button">左转</a></th>
                 <th><a href="/ctrl/t_stop"class="button">停止</a></th>
                 <th><a href="/ctrl/t_right"class="button">右转</a> </th>
+                <th><a href="/camera/tilt/-"class="button">向上</a></th>
+                <th>[ {{ tiltServoAngle }} ] </th>
+                <th><a href="/camera/tilt/+"class="button">向下</a></th>
         </tr>
         <tr>
                 <th><a href="/speed/dec"class="button">减速</a></th>
                 <th></th>
                 <th><a href="/ctrl/t_down"class="button">后退</a></th>
+                <th></th>
+                <th></th>
+                <th></th>
                 <th></th>
         </tr>
     </table>
