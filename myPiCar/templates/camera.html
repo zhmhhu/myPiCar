@@ -1,0 +1,24 @@
+<!--
+  # appCam.py
+  # 摄像机实时画面
+  #
+  #
+   
+-->
+
+<html>
+  <head>
+    <title>Live Streaming</title>
+    <link rel="stylesheet" href='../static/style.css'/>
+    <style>
+		body {
+			text-align: center;
+		}
+    </style>
+  </head>
+  <body>
+    <h1>Live Streaming</h1>
+    <h3><img src="{{ url_for('video_feed') }}" height="65%"></h3>
+	<hr>
+  </body>
+</html>
