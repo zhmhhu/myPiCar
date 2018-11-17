@@ -15,10 +15,10 @@ class stateCtrl(object):
 	def __init__(self):
 
 		########电机驱动接口定义#################
-		self.ENA = 33  # //L298使能A
-		self.ENB = 35  # //L298使能B
-		self.IN1 = 11  # //电机接口1
-		self.IN2 = 12  # //电机接口2
+		self.ENA = 29  # //L298使能A
+		self.ENB = 31  # //L298使能B
+		self.IN1 = 7  # //电机接口1
+		self.IN2 = 16  # //电机接口2
 		self.IN3 = 13  # //电机接口3
 		self.IN4 = 15  # //电机接口4
 
@@ -29,8 +29,8 @@ class stateCtrl(object):
 		self.IR_RB = 22  # 右下
 
 		########超声波传感器接口定义#################
-		self.Trig = 38
-		self.Echo = 40
+		self.Trig = 33
+		self.Echo = 32
 
 		self.checkdiststate = False
 		self.diststart = False
@@ -56,29 +56,28 @@ class stateCtrl(object):
 		#GPIO.output(self.ENA, GPIO.HIGH)
 		#GPIO.output(self.ENB, GPIO.HIGH)
 		
-
 	def t_up(self, secondvalue=0):
 		self.setup()
 		GPIO.output(self.IN1, True)
 		GPIO.output(self.IN2, False)
-		GPIO.output(self.IN3, False)
-		GPIO.output(self.IN4, True)
-
-	def t_left(self, secondvalue=0):
+		GPIO.output(self.IN3, True)
+		GPIO.output(self.IN4, False)
+		
+	def t_down(self, secondvalue=0):
 		self.setup()
 		GPIO.output(self.IN1, False)
 		GPIO.output(self.IN2, True)
 		GPIO.output(self.IN3, False)
 		GPIO.output(self.IN4, True)
 
-	def t_right(self, secondvalue=0):
+	def t_left(self, secondvalue=0):
 		self.setup()
 		GPIO.output(self.IN1, True)
 		GPIO.output(self.IN2, False)
-		GPIO.output(self.IN3, True)
-		GPIO.output(self.IN4, False)
+		GPIO.output(self.IN3, False)
+		GPIO.output(self.IN4, True)
 
-	def t_down(self, secondvalue=0):
+	def t_right(self, secondvalue=0):
 		self.setup()
 		GPIO.output(self.IN1, False)
 		GPIO.output(self.IN2, True)
