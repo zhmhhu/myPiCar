@@ -39,8 +39,8 @@ class stateCtrl(object):
 
 	def setup(self):
 		'''引脚初始化'''
-		#GPIO.setmode(GPIO.BOARD)
-		#GPIO.setwarnings(False)
+		GPIO.setmode(GPIO.BOARD)
+		GPIO.setwarnings(False)
 
 		GPIO.setup(self.IN1, GPIO.OUT)
 		GPIO.setup(self.IN2, GPIO.OUT)
@@ -90,4 +90,6 @@ class stateCtrl(object):
 		GPIO.output(self.IN2, False)
 		GPIO.output(self.IN3, False)
 		GPIO.output(self.IN4, False)
+		GPIO.cleanup()
+		print('cleanup!!')
 
